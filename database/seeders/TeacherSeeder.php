@@ -18,53 +18,52 @@ class TeacherSeeder extends Seeder
         //
 
         Teacher::create([
-            'firstName'=>'James',
-            'lastName'=>'Kamau',
-            'Email'=>'james@kamau.com',
-            'phone'=>'0700013049',
-            'created_at'=>now(),
-            'updated_at'=>now(),
+            'firstName' => 'James',
+            'lastName' => 'Kamau',
+            'Email' => 'james@kamau.com',
+            'phone' => '0700013049',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         Teacher::create([
-            'firstName'=>'dennis',
-            'lastName'=>'mugabi',
-            'Email'=>'denis@kinyua.com',
-            'phone'=>'0700013049',
-            'created_at'=>now(),
-            'updated_at'=>now(),
+            'firstName' => 'dennis',
+            'lastName' => 'mugabi',
+            'Email' => 'denis@kinyua.com',
+            'phone' => '0700013049',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         Teacher::create([
-            'firstName'=>'christine',
-            'lastName'=>'mwende',
-            'Email'=>'chris@mwede.com',
-            'phone'=>'0700013049',
-            'created_at'=>now(),
-            'updated_at'=>now(),
+            'firstName' => 'christine',
+            'lastName' => 'mwende',
+            'Email' => 'chris@mwede.com',
+            'phone' => '0700013049',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         Teacher::create([
-            'firstName'=>'kelvin',
-            'lastName'=>'wabua',
-            'Email'=>'kelvinwabua.com',
-            'phone'=>'0700013049',
-            'created_at'=>now(),
-            'updated_at'=>now(),
+            'firstName' => 'kelvin',
+            'lastName' => 'wabua',
+            'Email' => 'kelvinwabua.com',
+            'phone' => '0700013049',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         Teacher::create([
-            'firstName'=>'Milicent',
-            'lastName'=>'waja',
-            'Email'=>'miliewaja@waja.com',
-            'phone'=>'0700013049',
-            'created_at'=>now(),
-            'updated_at'=>now(),
+            'firstName' => 'Milicent',
+            'lastName' => 'waja',
+            'Email' => 'miliewaja@waja.com',
+            'phone' => '0700013049',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         Teacher::create([
-            'firstName'=>'John',
-            'lastName'=>'joroge',
-            'Email'=>'jonjoros@jon.com',
-            'phone'=>'0700013049',
-            'created_at'=>now(),
-            'updated_at'=>now(),
+            'firstName' => 'John',
+            'lastName' => 'joroge',
+            'Email' => 'jonjoros@jon.com',
+            'phone' => '0700013049',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
-
     }
 }

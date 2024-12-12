@@ -14,9 +14,10 @@ class TimetableController extends Controller
     public function index()
     {
         //
-        $timetables = Timetable::with([ 'subject', 'teacher', 'room'])->get();
-        return view('admin.timetables.index',[
-            'timetables'=>$timetables
+
+        $timetables = Timetable::with(['subject', 'teacher', 'room'])->get();
+        return view('admin.timetables.index', [
+            'timetables' => $timetables
         ]);
     }
 

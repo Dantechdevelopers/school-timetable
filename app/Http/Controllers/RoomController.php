@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
+use App\Models\Timetable;
 
 class RoomController extends Controller
 {
@@ -14,6 +15,7 @@ class RoomController extends Controller
     public function index()
     {
         //
+
         $rooms = Room::latest()->paginate(10);
         return view(
             'admin.rooms.index',

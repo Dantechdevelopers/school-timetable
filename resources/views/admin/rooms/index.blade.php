@@ -23,7 +23,7 @@
 
         </div>
 
-        
+
 
         <div class="overflow-x-scroll">
             <table>
@@ -32,7 +32,7 @@
                 <th><a href="#" wire:click="sortBy('name')">{{ __('Name') }}</a></th>
                 <th><a href="#" wire:click="sortBy('email')">{{ __('Id') }}</a></th>
                 <th>{{ __('Room Name') }}</th>
-              
+
                 <th>{{ __('Action') }}</th>
             </tr>
             </thead>
@@ -41,23 +41,23 @@
                <td>
                 {{$room->room_name}}
                </td>
-                       
+
                     <td>
                         <div class="flex space-x-2">
 
-                                
+
 
                                 @if(can('edit_users'))
                                     <x-a href="{{ route('admin.rooms.edit', $room->id )}}">{{ __('Edit') }}</x-a>
-                               
+
                                 @endif
 
                                 @if(can('edit_users'))
                                     <x-a href="{{ route('admin.rooms.destroy', $room->id )}}">{{ __('delete') }}</x-a>
-                               
+
                                 @endif
 
-                                
+
                         </div>
                     </td>
                 </tr>
@@ -71,5 +71,13 @@
     </div>
 
 </div>
+
+        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 
 @endsection

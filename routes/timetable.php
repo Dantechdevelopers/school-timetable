@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 
 Route::prefix('timetable')->group(function () {
-    Route::get('/', [TimetableController::class, 'index'])->name('admin.timetable.index');
+    Route::get('/', [TimetableController::class, 'index'])->name('admin.timetable.show');
     Route::get('/create', [TimetableController::class, 'create'])->name('admin.timetable.create');
     Route::post('/store', [TimetableController::class, 'store'])->name('admin.timetable.store');
     Route::get('{id}/edit', [TimetableController::class, 'edit'])->name('admin.timetable.edit');
