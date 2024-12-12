@@ -39,7 +39,11 @@ Route::prefix(config('admintw.prefix'))->middleware(['auth', 'activeUser', 'ipCh
         Route::get('{user}/edit', EditUser::class)->name('admin.users.edit');
         Route::get('{user}', ShowUser::class)->name('admin.users.show');
     });
+<<<<<<< HEAD
 
+=======
+    require __DIR__ . '/teachers.php';
+>>>>>>> 34227e796b9764c0772327a9c51ee51bcdd6b209
     require __DIR__ . '/rooms.php';
     require __DIR__ . '/subjects.php';
 });

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Subject;
-use App\Http\Requests\StoreSubjectRequest;
-use App\Http\Requests\UpdateSubjectRequest;
+use App\Models\Teacher;
+use App\Http\Requests\StoreTeacherRequest;
+use App\Http\Requests\UpdateTeacherRequest;
 
-class SubjectController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,11 @@ class SubjectController extends Controller
     public function index()
     {
         //
-        $subjects = Subject::latest()->paginate(3);
+        $teachers = Teacher::latest()->paginate(4);
         return view(
-            'admin.subjects.index',
+            'admin.teachers.index',
             [
-                'subjects' => $subjects
+                'teachers' => $teachers
             ]
         );
     }
@@ -29,12 +29,13 @@ class SubjectController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSubjectRequest $request)
+    public function store(StoreTeacherRequest $request)
     {
         //
     }
@@ -42,7 +43,7 @@ class SubjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Subject $subject)
+    public function show(Teacher $teacher)
     {
         //
     }
@@ -50,7 +51,7 @@ class SubjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Subject $subject)
+    public function edit(Teacher $teacher)
     {
         //
     }
@@ -58,7 +59,7 @@ class SubjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSubjectRequest $request, Subject $subject)
+    public function update(UpdateTeacherRequest $request, Teacher $teacher)
     {
         //
     }
@@ -66,7 +67,7 @@ class SubjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Subject $subject)
+    public function destroy(Teacher $teacher)
     {
         //
     }

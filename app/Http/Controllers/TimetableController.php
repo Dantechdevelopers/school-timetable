@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Timetable;
 use App\Http\Requests\StoreTimetableRequest;
 use App\Http\Requests\UpdateTimetableRequest;
+use App\Models\Teacher;
+use App\Models\Subject;
+use App\Models\Room;
 
 class TimetableController extends Controller
 {
@@ -14,8 +17,12 @@ class TimetableController extends Controller
     public function index()
     {
         //
+<<<<<<< HEAD
 
         $timetables = Timetable::with(['subject', 'teacher', 'room'])->get();
+=======
+        $timetables = Timetable::with(['subject', 'teacher', 'room'])->paginate(5);
+>>>>>>> 34227e796b9764c0772327a9c51ee51bcdd6b209
         return view('admin.timetables.index', [
             'timetables' => $timetables
         ]);
@@ -27,6 +34,18 @@ class TimetableController extends Controller
     public function create()
     {
         //
+        $title = 'create Timetable';
+        $teachers = Teacher::all();
+        $subjects = Subject::all();
+        $rooms = Room::all();
+        return view('admin.timetables.create', [
+            'title' => $title,
+            'rooms' => $rooms,
+            'subjects' => $subjects,
+            'teachers' => $teachers
+
+
+        ]);
     }
 
     /**
@@ -35,6 +54,16 @@ class TimetableController extends Controller
     public function store(StoreTimetableRequest $request)
     {
         //
+        //dd($request);
+        $request->validated();
+        Timetable::create([
+            'subject_id' => $request->subject,
+            'teacher_id' => $request->teacher,
+            'day' => $request->day,
+            'time' => $request->time,
+            'room_id' => $request->room
+        ]);
+        return back()->with('success','success');
     }
 
     /**
@@ -51,14 +80,34 @@ class TimetableController extends Controller
     public function edit(Timetable $timetable)
     {
         //
+        $title = 'Edit Timetable';
+        return view('admin.timetables.edit', [
+            'title' => $title,
+            'timetable'=>$timetable,
+            //'rooms' => $rooms,
+           // 'subjects' => $subjects,
+            //'teachers' => $teachers
+
+
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTimetableRequest $request, Timetable $timetable)
+    public function update(UpdateTimetableRequest $request, $id)
     {
         //
+        $timetable=Timetable::findOrFail($id);
+        $request->validated();
+        $timetable->update([
+            'subject_id' => $request->subject,
+            'teacher_id' => $request->teacher,
+            'day' => $request->day,
+            'time' => $request->time,
+            'room_id' => $request->room
+        ]);
+        return back()->with('success','success');
     }
 
     /**
